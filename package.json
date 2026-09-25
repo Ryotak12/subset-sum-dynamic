@@ -1,0 +1,17 @@
+{
+  "name": "subset-sum-dynamic",
+  "version": "0.1.0",
+  "description": "Determines whether a subset of given positive integers sums to a target using a bitset-based dynamic programming approach.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
