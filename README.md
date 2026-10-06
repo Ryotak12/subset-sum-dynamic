@@ -27,3 +27,10 @@ The deliberate trade-off: only positive integers and a non-negative integer targ
 - Duplicates are fine: each occurrence is a separate candidate element, so `[2, 2, 2]` can make `6` but `[2]` alone cannot make `4`.
 - Non-integer values or target, zero or negative values, and a negative target all throw (`TypeError` for type mismatches, `RangeError` for bad numeric ranges). Validate upstream if your data is untrusted.
 - The check short-circuits the moment the target bit becomes reachable, so ordering values small-to-large can make it noticeably faster on yes-instances.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
